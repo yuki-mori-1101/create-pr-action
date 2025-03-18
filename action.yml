@@ -1,6 +1,6 @@
 name: Create PR
 description: |
-  変更したファイルをコミットし、プルリクエストを作成します。
+  変更したファイルをコミットして、プルリクエストを作成します。
   プルリクエストのタイトルや本文には、コミットメッセージがそのまま利用されます。
   パーミッションに、「content: write」と「pull-requests: write」が必要です。
 inputs:
@@ -20,7 +20,7 @@ runs:
         USERNAME: github-actions[bot]
         EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
         MESSAGE: ${{inputs.message}}
-        BRANCH: auto/${{github.runn_id}}/${{github.run_attempt}}
+        BRANCH: auto/${{github.run_id}}/${{github.run_attempt}}
         GITHUB_TOKEN: ${{github.token}}
       run: |
         echo "branch=${BRANCH}" >> "${GITHUB_OUTPUT}"
